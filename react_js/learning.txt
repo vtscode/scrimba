@@ -1,0 +1,34 @@
+React is a component based library to build user interfaces.
+
+Learning philosophy
+=>The easy way is the hard way :
+	learning by doing
+	woodworking analogy
+	Tutorial Hell
+	Actually do the things : scrimba is ideal for this kind of learning if u use it correctly
+
+=> Spaced learning and repetition are key
+	Don't binge the course
+	Take frequent breaks (rest ur brain for the day)
+	Re-watch past lessons for review
+
+
+What u'll learn
+COMPONENTs => reuseable
+JSX
+Styling
+Props => how pass data on ur apps
+State => How to maintain n change data on ur apps
+Event Handling => to have strong interactivity to the users
+
+LifeCyle Methods => which help u hook into different timing events of ur react component
+
+HTTP => fetching data from API using HTTP 
+Forms => create UX
+MORE!!
+
+
+
+
+
+

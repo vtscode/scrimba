@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Destructuring object</title>
+</head>
+<body>
+	<p>Destructuring object</p>
+	<script type="text/javascript">
+		// ================== Destructure object
+		const personalInfo = {
+			fName: 'Riventus',
+			lName: 'AHA',
+			city:'Jakarta',
+			state:'Jakarta Pusat',
+			zipCode: 19203
+		};
+		// mengambbil value dari object literal kemudian di aliaskan menjdi fn dan ln
+		const {fName:fn,lName:ln} = personalInfo;
+
+		console.log(`Hi ${fn} ${ln}`);
+
+		// ================= Destructure Array
+
+		let [fName,mName,lName] = ['Dylan','coding god','Israel'];
+
+		// destructuring
+		lName = 'oliv';
+		console.log(lName);
+
+		// Object Literal
+		function addressMaker(city,state){
+			// const newAdd = {newCity: city, newState:state};
+			const newAdd = {city,state};
+			console.log(newAdd);
+		}
+
+		addressMaker('Jakarta','DKI JKT');
+
+		function addressMaker1(address){
+			const{city,state} = address;
+			const newAdd1 = {
+				city,
+				state,
+				country : 'Indonesia'
+			};
+			console.log(`${newAdd1.city}, ${newAdd1.state}, ${newAdd1.country}`);
+		}
+
+		addressMaker1({city:'Jakarta',state:'DKI Jakarta'});
+
+
+		// For loop
+		let incomes = [62000,67000,75000];
+		let total = 0;
+
+		let fullName = "Riventus coding God Israel";
+		// iterable integer
+		for (const income of incomes){
+			console.log(income);
+			total += income;
+		}
+		// iterable string
+		for (const karakter of fullName){
+			console.log(karakter);
+		}
+
+		let income1 = [1234,4321,1253];
+		for(let income of income1){
+			income += 5000;
+			console.log(income);
+		}
+		console.log(income1);
+
+		// Spread Operator
+		let example1 = [1,2,3,4,5,6,7];
+		let example2 = [...example1];
+		example2.push(true);
+		console.log(example2);
+
+		let example3 ={
+			fName: 'Riventus'
+		};
+
+		let example4 = {
+			// fName:'N/A'
+			...example3
+		};
+
+		example4 = {fName:'Riventusa'};
+		console.log(example4);
+
+		// Rest Operator
+		function add(...nums){
+
+			console.log(nums);
+		}
+		add(4,5,7,8,12);
+
+
+		// Arrow function
+		function add1(...nums){
+			let total = nums.reduce( (x,y) => x+y );
+			console.log(total);
+		}
+
+		add1(4,5,7,8,12);
+
+
+		// default params
+		function add2(numArray = []){
+			let total = 0;
+			numArray.forEach(element => {
+				total += element;
+			})
+			console.log(total);
+		}
+		add2();
+
+
+		// includes() seperti indexOf
+		let numArr = [1,2,3,4,5];
+		console.log(numArr.includes(0));
+
+		// let & const
+		if(false){
+			var example =5;
+		}
+
+		console.log(example);
+		/*
+		let utk variable block scope,
+		const tidak bisa di ubah nilainya tetapi bisa di tambah utk array n object
+		*/
+
+		// import & export
+
+		// utk menambah string dengan limit tertentu
+		let exam = 'Riventus';
+		console.log(exam.padStart(10,'a'));
+		console.log(exam.padEnd(10,'a'));
+		// empty string ditambahin jika tidak ada param ke 2
+		console.log(exam.padStart(10));
+		console.log(exam.padEnd(10));
+
+		// Trailling commas
+		function data1(param1,){
+			const example5 = {
+				name: 'Riventus',
+			};
+		}
+
+		data1(2);
+
+
+		const exampleSet = new Set([1,1,1,2,2,2,2]);
+		// menambah nilai set
+		exampleSet.add(5);
+		exampleSet.add(5).add(17);
+
+		// for delete 1 of set
+		console.log(exampleSet.delete(5));
+		// exists or not this set
+		console.log(exampleSet.has(5));
+		// size of set
+		console.log(exampleSet.size);
+		// clear semua set
+		console.log(exampleSet.clear());
+
+		// set is iterable
+
+		// Array
+
+		let array1 = [1,2,3,"ada"];
+		// membuat array baru tanpa merubah isinya dengan spread operator
+		let array2 = [...array1];
+		array2.push('MANTAP');
+		console.log(array1);
+		console.log(array2);
+
+
+		let objek1 = {
+			fName : 'Riventus'
+		};
+		// membuat objek baru tanpa merubah isi objek lama dengan Object.assign({},objLama);
+		let objek2 = Object.assign({},objek1);
+
+		objek2.lName = 'AHA';
+
+		console.log(objek1);
+		console.log(objek2);
+	</script>
+	<!-- <script type="module" async>import './import.js';</script> -->
+</body>
+</html>
